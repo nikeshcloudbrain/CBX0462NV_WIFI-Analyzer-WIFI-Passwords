@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <include layout="@layout/include_tool"
+        android:id="@+id/tool"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tool">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/mainbackground"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/_1sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/icon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Connect Automatically"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus_semibold"
+                    android:textSize="18sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="You can automatically connect to a Wi-Fi10network when it&apos;s on"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/plus_medium"
+                    android:textSize="13sp" />
+
+                <com.github.angads25.toggle.widget.LabeledSwitch
+                    android:id="@+id/switchService"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:textSize="14sp"
+                    app:colorBorder="@color/colorMain"
+                    app:colorOn="@color/colorMain"
+                    app:textOff="OFF"
+                    app:textOn="ON" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewAdsMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_3sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_3sdp">
+
+                <FrameLayout
+                    android:id="@+id/frameViewAdsMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_210sdp"
+                    android:orientation="vertical"
+                    android:visibility="gone" />
+
+            </androidx.cardview.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/mainbackground"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/_1sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.85"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/wifi_icn" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.15"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Turn Off Wifi When..."
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_17ssp"
+                            android:fontFamily="@font/plus_medium"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvScreenOff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When screen off in 10 minutes"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbScreenOff"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTimeOff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When everyday at 23:00"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp"  />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbAtTimeOff"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When not connected to any network(1 min)"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp"  />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbNotConnectedNetwork"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When disconnect charger    "
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbDisconnectCharger"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/mainbackground"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/_1sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.85"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="5dp"
+                            android:src="@drawable/wifi_icn" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.15"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Turn On Wifi When..."
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_17ssp"
+                            android:fontFamily="@font/plus_medium"
+                             />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When screen on"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbScreenOn"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTimeOn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When everyday at 6:00 "
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbAtTimeOn"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="start">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="When connect to charger"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/plus_semibold"
+                            android:textSize="@dimen/_11ssp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.8"
+                        android:gravity="center">
+
+
+                        <com.animsh.animatedcheckbox.AnimatedCheckBox
+                            android:id="@+id/cbConnectCharger"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            app:border_stroke_width="2dp"
+                            app:color_checked="@color/colorMain"
+                            app:color_tick="@color/white"
+                            app:color_unchecked="@color/white"
+                            app:color_unchecked_stroke="@color/black"
+                            app:small_tick="true"
+                            app:tick_stroke_width="1dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
